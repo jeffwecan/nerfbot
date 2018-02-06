@@ -38,3 +38,8 @@ while (True):
       time.sleep(0.5)
   setServoPulse(0, servoMax)
   time.sleep(1)
+  pdb.set_trace()
+  for step_num, step in enumerate(range(2000, 1000, -25)):
+      print('step #%s: %s' % (step_num, step))
+      setServoPulse(0, step)
+      time.sleep(0.5)
