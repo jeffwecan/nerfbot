@@ -12,7 +12,7 @@ import time
 # Initialise the PWM device using the default address 0x40
 pwm = PWM(0x40, debug=True)
 
-servoMin = 1100  # Min pulse length, us (tick 184/4096)
+servoMin = 900  # Min pulse length, us (tick 184/4096)
 servoMax = 1900  # Max pulse length, us  (tick 430/4096)
 servoMid = servoMax - ((servoMax-servoMin)/2) # Midpoint pulse length, us
 cycle = 50 # cycle length, Hz
