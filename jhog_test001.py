@@ -29,14 +29,14 @@ pwm.setPWMFreq(cycle) # Set frequency
 
 while (True):
   # cycle servo
-  setServoPulse(0, servoMin)
+  setServoPulse(0, servoMax)
   time.sleep(1)
   pdb.set_trace()
-  for step_num, step in enumerate(range(1000, 2000, 25)):
+  for step_num, step in enumerate(range(2000, 1000, -25)):
       print('step #%s: %s' % (step_num, step))
       setServoPulse(0, step)
       time.sleep(0.1)
-  setServoPulse(0, servoMax)
+  setServoPulse(0, servoMin)
   # time.sleep(1)
   # pdb.set_trace()
   # for step_num, step in enumerate(range(2000, 1000, -25)):
