@@ -30,7 +30,8 @@ while (True):
   # cycle servo
   setServoPulse(0, servoMin)
   time.sleep(1)
-  for step in range(1000, 2000, 25):
+  for step_num, step in enumerate(range(1000, 2000, 25)):
+      print('step #%s: %s' % (step_num, step))
       setServoPulse(0, step)
       time.sleep(0.5)
   setServoPulse(0, servoMax)
