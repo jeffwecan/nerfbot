@@ -13,7 +13,7 @@ import time
 pwm = PWM(0x40, debug=True)
 
 servoMin = 500  # Min pulse length, us (tick 184/4096)
-servoMax = 2400  # Max pulse length, us  (tick 430/4096)
+servoMax = 2250  # Max pulse length, us  (tick 430/4096)
 servoMid = servoMax - ((servoMax-servoMin)/2) # Midpoint pulse length, us
 cycle = 50 # cycle length, Hz
 
@@ -26,11 +26,11 @@ def setServoPulse(channel, pulse):
 
 pwm.setPWMFreq(cycle) # Set frequency
 
-while (True):
+# while (True):
   # cycle servo
-  setServoPulse(0, servoMin)
-  time.sleep(1)
-  setServoPulse(0, servoMid)
-  time.sleep(1)
-  setServoPulse(0, servoMax)
-  time.sleep(1)
+setServoPulse(0, servoMin)
+# time.sleep(1)
+# setServoPulse(0, servoMid)
+  # time.sleep(1)
+  # setServoPulse(0, servoMax)
+  # time.sleep(1)
