@@ -2,6 +2,7 @@
 
 from Adafruit_PWM_Servo_Driver import PWM
 import time
+import pdb
 
 # ===========================================================================
 # Example Code for Adafruit 16 channel PWM Driver
@@ -30,6 +31,7 @@ while (True):
   # cycle servo
   setServoPulse(0, servoMin)
   time.sleep(1)
+  pdb.set_trace()
   for step_num, step in enumerate(range(1000, 2000, 25)):
       print('step #%s: %s' % (step_num, step))
       setServoPulse(0, step)
