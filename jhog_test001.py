@@ -8,12 +8,12 @@ import time
 # Refactored by ruprecht
 # Numbers for HS-55 Servo (20ms/50Hz cycle, 1000-2000 us width)
 # ===========================================================================
-1
+
 # Initialise the PWM device using the default address 0x40
 pwm = PWM(0x40, debug=True)
 
-servoMin = 1300  # Min pulse length, us (tick 184/4096)
-servoMax = 1700  # Max pulse length, us  (tick 430/4096)
+servoMin = 1000  # Min pulse length, us (tick 184/4096)
+servoMax = 2000  # Max pulse length, us  (tick 430/4096)
 servoMid = servoMax - ((servoMax-servoMin)/2) # Midpoint pulse length, us
 cycle = 50 # cycle length, Hz
 
@@ -34,5 +34,3 @@ while (True):
   time.sleep(1)
   setServoPulse(0, servoMax)
   time.sleep(1)
-  # setServoPulse(0, servoMid)
-  # time.sleep(1)
