@@ -31,7 +31,7 @@ while (True):
   # cycle servo
   setServoPulse(0, servoMin)
   time.sleep(1)
-  for step in in range(1000, 2000, 25):
+  for step in range(1000, 2000, 25):
       setServoPulse(0, step)
       time.sleep(0.5)
   setServoPulse(0, servoMax)
