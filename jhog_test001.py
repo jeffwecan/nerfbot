@@ -15,6 +15,7 @@ pwm = PWM(0x40, debug=True)
 servoMin = 1000  # Min pulse length, us (tick 184/4096)
 servoMax = 2000  # Max pulse length, us  (tick 430/4096)
 servoMid = servoMax - ((servoMax-servoMin)/2) # Midpoint pulse length, us
+steps
 cycle = 50 # cycle length, Hz
 
 pulseLength = 1000000 / cycle
@@ -30,7 +31,8 @@ while (True):
   # cycle servo
   setServoPulse(0, servoMin)
   time.sleep(1)
-  setServoPulse(0, servoMid)
-  time.sleep(1)
+  for step in in range(1000, 2000, 25):
+      setServoPulse(0, step)
+      time.sleep(0.5)
   setServoPulse(0, servoMax)
   time.sleep(1)
